@@ -2,10 +2,10 @@
   ec2_elb_lb:
     name: "{{ ELBNAME }}"
     state: present
-    region: us-east-2
+    region: us-east-1
     zones:
-      - us-east-2a
-      - us-east-2b
+      - us-east-1a
+      - us-east-1b
     listeners:
       - protocol: http
         load_balancer_port: 80
@@ -18,10 +18,10 @@
     instance_type: t2.nano
     image: ami-0986c2ac728528ac2
     user_data: "{{ USERDATA }}"
-    region: us-east-2
+    region: us-east-1
     group_id:
       - sg-08849aeba5c5e3b04
-      - sg-0af22d4c57c7bc446
+      - sg-0cea8e34e945fb714
     wait: yes
     instance_tags:
       Name: web_server
